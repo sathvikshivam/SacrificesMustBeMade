@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://coekjyfpf4mwq"]
+
+[ext_resource type="Script" uid="uid://bfyskaycvdmm2" path="res://actors/Rlayer.gd" id="1_jx5ha"]
+[ext_resource type="Texture2D" uid="uid://1d7eexj3bkmg" path="res://icon.svg" id="2_v6fml"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p0vlq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcosh"]
+size = Vector2(32, 48)
+
+[node name="Player" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_jx5ha")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(5.9604645e-07, -8.34465e-07)
+scale = Vector2(0.25000003, 0.37500003)
+texture = ExtResource("2_v6fml")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+material = SubResource("CanvasItemMaterial_p0vlq")
+shape = SubResource("RectangleShape2D_kcosh")
+debug_color = Color(0.25337234, 0.5854316, 0.6802743, 0.41960785)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
